@@ -1,9 +1,11 @@
 let npm = document.getElementById("npm");
 let nama = document.getElementById("nama");
+let imagesURL = document.getElementById("imagesURL");
 
 function simpan() {
     console.log(npm.value)
     console.log(nama.value)
+    console.log(imagesURL.value)
 
     // localStorage.setItem("npm", npm.value)
     // localStorage.setItem("nama", nama.value)
@@ -21,7 +23,8 @@ function simpan() {
     // simpan value npm dan nama ke dalam object data
     data.push({
         npm: npm.value, 
-        nama: nama.value
+        nama: nama.value,
+        imagesURL: imagesURL.value
     })
     console.log(data)
 
@@ -43,7 +46,8 @@ function tampil() {
     // lakukan perulangan (forEach)
     hasil.forEach(element => {
         // console.log(element)
-        document.getElementById("list-mhs").innerHTML += `<li>${element.npm} ${element.nama}</li>`
+        document.getElementById("list-mhs").innerHTML += `<li>${element.npm} ${element.nama}</li>
+         <img src="${element.imagesURL}" alt="Foto ${element.nama}">`
     });
 }
 
